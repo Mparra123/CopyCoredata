@@ -14,6 +14,8 @@
 		66BA646D24F622DA007ACEBE /* CopyCoredata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66BA646B24F622DA007ACEBE /* CopyCoredata.xcdatamodeld */; };
 		66BA646F24F622DC007ACEBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66BA646E24F622DC007ACEBE /* Assets.xcassets */; };
 		66BA647224F622DC007ACEBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66BA647024F622DC007ACEBE /* LaunchScreen.storyboard */; };
+		66BA647B24F638DC007ACEBE /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BA647924F638DC007ACEBE /* User+CoreDataClass.swift */; };
+		66BA647C24F638DC007ACEBE /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BA647A24F638DC007ACEBE /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		66BA646E24F622DC007ACEBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66BA647124F622DC007ACEBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66BA647324F622DC007ACEBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66BA647924F638DC007ACEBE /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		66BA647A24F638DC007ACEBE /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,8 @@
 		66BA645624F622DA007ACEBE = {
 			isa = PBXGroup;
 			children = (
+				66BA647924F638DC007ACEBE /* User+CoreDataClass.swift */,
+				66BA647A24F638DC007ACEBE /* User+CoreDataProperties.swift */,
 				66BA646124F622DA007ACEBE /* CopyCoredata */,
 				66BA646024F622DA007ACEBE /* Products */,
 			);
@@ -143,8 +149,10 @@
 			files = (
 				66BA646724F622DA007ACEBE /* ViewController.swift in Sources */,
 				66BA646324F622DA007ACEBE /* AppDelegate.swift in Sources */,
+				66BA647C24F638DC007ACEBE /* User+CoreDataProperties.swift in Sources */,
 				66BA646524F622DA007ACEBE /* SceneDelegate.swift in Sources */,
 				66BA646D24F622DA007ACEBE /* CopyCoredata.xcdatamodeld in Sources */,
+				66BA647B24F638DC007ACEBE /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
