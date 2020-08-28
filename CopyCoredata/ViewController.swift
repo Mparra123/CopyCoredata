@@ -19,9 +19,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var lastNametext: UITextField!
     @IBOutlet weak var nameText: UITextField!
    
+    override func viewWillAppear(_ animated: Bool) {
+        
+            super.viewWillAppear(animated)
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context =  appDelegate.persistentContainer.viewContext
+            
+            let request:NSFetchRequest<User> = User.fetchRequest()
+            
+            do{
+                let usersResults = try context.fetch(request)
+                users = usersResults
+                //print()
+            }catch let error {
+                print("Error \(error.localizedDescription)")
+            }
+            
+        self.tableView.reloadData()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+         //self.tableView.reloadData()
     }
     
     @IBAction func guardar(_ sender: Any) {

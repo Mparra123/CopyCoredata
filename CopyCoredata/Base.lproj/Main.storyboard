@@ -63,7 +63,7 @@
                                 <rect key="frame" x="159" y="290" width="57" height="30"/>
                                 <state key="normal" title="Guardar"/>
                                 <connections>
-                                    <action selector="guardar:" destination="BYZ-38-t0r" eventType="touchDragInside" id="nfu-hU-vW8"/>
+                                    <action selector="guardar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cpv-VZ-wuZ"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zkC-jc-Gyr">
@@ -79,6 +79,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="fvy-Kb-qAq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bVZ-q1-LIt"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
