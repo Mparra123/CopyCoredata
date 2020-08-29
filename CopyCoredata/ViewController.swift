@@ -13,6 +13,10 @@ class ViewController: UIViewController {
 
         var users = [NSManagedObject]()
     
+  
+    @IBOutlet weak var userlogText: UITextField!
+    
+    @IBOutlet weak var passUserlog: UITextField!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emailText: UITextField!
@@ -27,22 +31,54 @@ class ViewController: UIViewController {
             
             let request:NSFetchRequest<User> = User.fetchRequest()
             
+    
             do{
                 let usersResults = try context.fetch(request)
                 users = usersResults
-                //print()
+                
+            
+                
             }catch let error {
                 print("Error \(error.localizedDescription)")
             }
             
-        self.tableView.reloadData()
+        self.tableView?.reloadData()
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-         //self.tableView.reloadData()
+//self.tableView.reloadData()
+    }
+    
+    
+    @IBAction func login(_ sender: Any) {
+               let appDelegate = UIApplication.shared.delegate as! AppDelegate
+       let context = appDelegate.persistentContainer.viewContext
+              let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+              request.returnsObjectsAsFaults = false
+        
+        do {
+                  let result = try context.fetch(request)
+                  for data in result as! [NSManagedObject] {
+                    if userlogText.text == data.value(forKey: "name") as? String && passUserlog.text == data.value(forKey: "lastName") as? String{
+                          print("Condition passed")
+                         // UserDefaults.standard.set(userlogText.text , forKey: "name")
+                          //UserDefaults.standard.set(true, forKey: "email")
+                          performSegue(withIdentifier: "lobby", sender: self)
+                          
+                      } else {
+                          print("Condition not  passed")
+                          
+                          
+                      }
+                      
+                  }
+              } catch let error {
+                  print("CoreDataError = \(error.localizedDescription)")
+              }
+        
     }
     
     @IBAction func guardar(_ sender: Any) {
